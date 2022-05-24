@@ -26,7 +26,7 @@ internal fun Application.redirectTest() {
                 call.respondRedirect("/redirect/infinity")
             }
             get("/encodedQuery") {
-                call.respondRedirect("/redirect/getWithUri?key=value1%3Bvalue2%3D%22some=thing")
+                call.respondRedirect("/redirect/getWithUri?key=value1%3Bvalue2%3D%22some%3Dthing")
             }
             get("/cookie") {
                 val token = call.request.cookies["Token"] ?: run {

@@ -39,7 +39,7 @@ class HttpRedirectTest : ClientLoader() {
         test { client ->
             client.prepareGet("$TEST_URL_BASE/encodedQuery").execute {
                 assertEquals(HttpStatusCode.OK, it.status)
-                assertEquals("/redirect/getWithUri?key=value1%3Bvalue2%3D%22some=thing", it.bodyAsText())
+                assertEquals("/redirect/getWithUri?key=value1%3Bvalue2%3D%22some%3Dthing", it.bodyAsText())
             }
         }
     }
